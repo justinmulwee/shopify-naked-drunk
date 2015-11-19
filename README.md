@@ -1,32 +1,43 @@
-Naked Drunk - A Shopify Theme
+Naked Drunk - a bourbon sass theme framework for Shopify
 ---------------------------------------------
-This is for Bourbon SASS developers who want to create a Shopify theme almost from scratch. This barebones theme retains Shopify's basic functionality, but has no styles or presentational markup.
 
-I was going to strip down Shopify's own <a href="https://github.com/Shopify/skeleton-theme">Skeleton theme</a>, but found that [Capra Labs](http://thisiscapra.com/blog/naked-a-shopify-theme/) had already done this. I forked that and added added Thoughtbot's SASS libraries: Bourbon, Neat, and Bitters. Documentation at [Bourbon.io](http://bourbon.io).
+This is a barebones starting point for developers who wish to create a Shopify theme from scratch using Thoughtbot's SASS libraries: Bourbon, Neat, and Bitters. It retains Shopify's basic functionality but has no styles, presentational markup or theme settings. It is not intended as a complete theme but as the basis for building one. Doing so will require an understanding of Sass, Bourbon, Shopify and Liquid.
 
-Compiling the Style
+Why
+----
+Shopify has created two themes meant for developers: [Skeleton](https://github.com/Shopify/skeleton-theme) and [Timber](http://shopify.github.io/Timber/). Despite being small, Skeleton is still bloated with presentational markup. It's minimal but complete, thus not ideal for from-scratch designs. And while it's not *terribly* outdated, Shopify appears to have mostly abandoned it in favor of their more complex framework, Timber. Timber is much larger, with non-semantic markup and a myriad of baked-in options, similar to Bootstrap. 
+
+I wanted a starting point that included Bourbon, Neat and Bitters, but was otherwise completely bare, whereas Skeleton and Timber feel like I'm customizing someone else's theme and navigating their idiosyncracies.
+
+I was going to start by stripping down Shopify's own <a href="https://github.com/Shopify/skeleton-theme">Skeleton theme</a>, but found that [Capra Labs](http://thisiscapra.com/blog/naked-a-shopify-theme/) had already done this. I forked that, added the SASS libraries, and made some updates by consulting Timber's code.
+
+Making It Work
 ---------------------
-The sass folder will be ignored by Shopify. To get our styles to work, compile them into one file in the assets folder. If you have the Sass gem installed, you can just open this theme's folder in a terminal and paste this:
+Shopify will ignore any folders other than the default (assets, config, layout, snippets and templates). So while Shopify theming allows Sass out of the box, you cannot normally organize style into folders of partials. This is contrary to Bourbon and to advanced Sass organization in general. Fortunately we can get around this by locally compiling all our sass into one vanilla css file in the assets folder. You must do this or **all your styles will be ignored**.
+
+If you have the Sass gem installed, simply open the theme's folder in a terminal and paste the following:
 ```
 sass --sourcemap=none --watch sass/style.scss:assets/style.css.liquid
 ```
-Alternatively, you could use a frontend compiler like Codekit or Prepros to do this.
+If you don't like the Terminal, any preprocessor such as Codekit or Prepros can easily handle this.
 
 Structure
 ---------------
 ```
 ├── assets
-│   └── Javascript, CSS, and theme images
+│   └── compiled css
+│   └── optional javascript & images
 ├── config
 │   └── custom Theme Settings
 ├── layout
 │   ├── theme.liquid
 │   └── optional alternate layouts
 ├── sass
-│   └── bourbon
-│   └── neat
-│   └── base
 │   └── style.scss
+│   └── bourbon/
+│   └── neat/
+│   └── base/
+│   └── optional style folders
 ├── snippets
 │   └── optional custom code snippets
 ├── templates
