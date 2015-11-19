@@ -1,18 +1,18 @@
-Shopify Naked theme
+Naked Drunk - A Shopify Theme
 ---------------------------------------------
+This is for Bourbon SASS developers who want to create a Shopify theme almost from scratch. This barebones theme retains Shopify's basic functionality, but has no styles or presentational markup.
 
-This is a completely naked Shopify theme. It's based on <a href="https://github.com/Shopify/skeleton-theme">Shopify Skeleton</a> and will track the changes applied to that in terms of liquid code. I found myself stripping out so much HTML and CSS I didn't need for client sites this would save me time creating new themes. This is meant for advanced Shopify theme developers, I have left in some semantic HTML such as some header tags and list items but that's about it. I've also left in the product variant JS for now.
+I was going to strip down Shopify's own <a href="https://github.com/Shopify/skeleton-theme">Skeleton theme</a>, but found that [Capra Labs](http://thisiscapra.com/blog/naked-a-shopify-theme/) had already done this. I forked that and added added Thoughtbot's SASS libraries: Bourbon, Neat, and Bitters. Documentation at [Bourbon.io](http://bourbon.io).
 
-You can view it here if you really want to see a blank site <a href="https://shopify-naked.myshopify.com/">https://shopify-naked.myshopify.com/</a>.
-
-Download / Setup
+Compiling the Style
 ---------------------
-1. <a href="https://github.com/thisiscapra/shopify-naked/archive/master.zip">Download</a> the latest version
-2. or clone the git repo: <code>git clone git@github.com:thisiscapra/shopify-naked.git</code>
-3. I like to use the Shopify theme gem for development <a href="https://github.com/Shopify/shopify_theme">shopify_theme</a>
-4. Import some dummy product data to start developing <a href="http://www.tetchi.ca/wp-content/uploads/2013/04/products1.csv">download CSV file</a>
+The sass folder will be ignored by Shopify. To get our styles to work, compile them into one file in the assets folder. If you have the Sass gem installed, you can just open this theme's folder in a terminal and paste this:
+```
+sass --sourcemap=none --watch sass/style.scss:assets/style.css.liquid
+```
+Alternatively, you could use a frontend compiler like Codekit or Prepros to do this.
 
-Basic structure
+Structure
 ---------------
 ```
 ├── assets
@@ -22,6 +22,11 @@ Basic structure
 ├── layout
 │   ├── theme.liquid
 │   └── optional alternate layouts
+├── sass
+│   └── bourbon
+│   └── neat
+│   └── base
+│   └── style.scss
 ├── snippets
 │   └── optional custom code snippets
 ├── templates
