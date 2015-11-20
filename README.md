@@ -3,6 +3,8 @@ Naked Drunk - a bourbon sass theme framework for Shopify
 
 This is a barebones starting point for developers who wish to create a Shopify theme from scratch using Thoughtbot's SASS libraries: Bourbon, Neat, and Bitters. It retains Shopify's basic functionality but has no styles, presentational markup or theme settings. It is not intended as a complete theme but as the basis for building one. Doing so will require an understanding of Sass, Bourbon, Shopify and Liquid.
 
+As you can see, it's unstyled except for the defaults that come with Bitters.
+![screenshot](http://i.imgur.com/AMaHfeb.png)
 Why
 ----
 Shopify has created two themes meant for developers: [Skeleton](https://github.com/Shopify/skeleton-theme) and [Timber](http://shopify.github.io/Timber/). Despite being small, Skeleton is still bloated with presentational markup. It's minimal but complete, thus not ideal for from-scratch designs. And while it's not *terribly* outdated, Shopify appears to have mostly abandoned it in favor of their more complex framework, Timber. Timber is much larger, with non-semantic markup and a myriad of baked-in options, similar to Bootstrap. 
